@@ -56,12 +56,14 @@ body::before {
     object-fit: cover;
     position: absolute;
     opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 .s-card__image {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    transition: 1s ease-in-out;
     position: relative;
 }
 
@@ -72,6 +74,7 @@ body::before {
     position: absolute;
     width: 100%;
     bottom: 0;
+    transition: bottom 1s ease-in-out;
 }
 
 .s-controller {
@@ -100,9 +103,22 @@ body::before {
 }
 
 .s-controller__button:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .s-controller__button:nth-child(2) {
     margin: 0 3.75rem;
+}
+
+.s-card--hovered .s-card__background {
+    cursor: pointer;
+    opacity: 0;
+}
+
+.s-card--hovered .s-card__image {
+    transform: scale(1.4);
+}
+
+.s-card--hovered .s-card__title {
+    bottom: 50%;
 }
