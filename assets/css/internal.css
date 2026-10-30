@@ -4,6 +4,7 @@
 /* Importando componentes do css */
 @import url('./components/__navigator.css');
 @import url('./components/__pills.css');
+@import url('./components/__link-button.css');
 
 .s-wrapper {
     display: flex;
@@ -24,7 +25,6 @@
     height: 100%;
     width: 100%;
     padding-left: 30px;
-    background-color: gray;
 }
 
 .s-wrapper .s-main-content__top {
@@ -63,4 +63,13 @@
 
 .s-wrapper .s-main-content__top .s-description .pills {
     margin-bottom: 18px;
+}
+
+.s-wrapper .s-main-content .s-links {
+    padding: 20px;
+}
+
+.s-wrapper .s-main-content .s-links ul {
+    display: flex;
+    flex-direction: row;
 }
