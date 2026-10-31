@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spider Man - Tobey Maguire</title>
-    <link href="/assets/css/internal.css" rel="stylesheet" type="text/css">
+    <link  rel="stylesheet" href="/assets/css/internal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css" />
 </head>
 
 <body>
@@ -72,14 +73,34 @@
             </div>
 
             <div class="s-main-content__bottom">
-                <ul>
-                    <li>00</li>
-                    <li>00</li>
-                    <li>00</li>
-                </ul>
+                <div class="gallery">
+                    <ul>
+                        <li>
+                            <a data-fancybox="gallery" href="/assets/images/spiderman-tobey/movie-01/gallery/image-01-full.jpg">
+                                <img src="/assets/images/spiderman-tobey/movie-01/gallery/image-01.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a data-fancybox="gallery" href="/assets/images/spiderman-tobey/movie-01/gallery/image-02-full.jpg">
+                                <img src="/assets/images/spiderman-tobey/movie-01/gallery/image-02.png" alt="">
+                            </a>
+                        </li>
+                        <li>
+                            <a data-fancybox="gallery" href="/assets/images/spiderman-tobey/movie-01/gallery/image-03-full.jpg">
+                                <img src="/assets/images/spiderman-tobey/movie-01/gallery/image-03.png" alt="">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            // Opções personalizadas (opcional)
+        });
+    </script>
 </body>
 
 </html>
