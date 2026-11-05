@@ -17,4 +17,9 @@ function addEventListenersToCards() {
     });
 }
 
+function selectCarrouselItem(selectedItem) {
+    console.log("Item selecionado: ", selectedItem.id);
+}
+
 addEventListenersToCards();
+

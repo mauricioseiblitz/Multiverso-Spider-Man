@@ -15,6 +15,7 @@ body::before {
     height: 100%;
     position: absolute;
     opacity: 0.2;
+    transition: background-image 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .s-menu {
@@ -41,14 +42,27 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    perspective: 3000px;
 }
 
 .s-card {
     border: 0.5rem solid white;
-    width: calc(100% / 3 - 8%);
+    width: 100%;
     height: 70vh;
-    position: relative;
-    transition: background-color 1s ease-in-out, filter .5s ease-in-out;
+    position: absolute;
+    transition: filter 5s ease-in-out;
+}
+
+.s-card:nth-child(1) {
+    transform: rotateY(0deg) translateZ(50vw);
+}
+
+.s-card:nth-child(2) {
+    transform: rotateY(120deg) translateZ(50vw);
+}
+
+.s-card:nth-child(3) {
+    transform: rotateY(240deg) translateZ(50vw);
 }
 
 .s-card__background {
@@ -78,12 +92,27 @@ body::before {
     transition: bottom 1s ease-in-out;
 }
 
+.s-card--hovered .s-card__background {
+    cursor: pointer;
+    opacity: 0;
+}
+
+.s-card--hovered .s-card__image {
+    transform: scale(1.4);
+}
+
+.s-card--hovered .s-card__title {
+    bottom: 50%;
+}
+
 .s-controller {
-    position: relative;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
+    bottom: 0.6rem;
+    width: 100%
 }
 
 .s-controller__button {
@@ -99,8 +128,8 @@ body::before {
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out;
     z-index: 1;
+    transition: transform 0.3s ease-in-out;
 }
 
 .s-controller__button:hover {
@@ -111,17 +140,18 @@ body::before {
     margin: 0 3.75rem;
 }
 
-.s-card--hovered .s-card__background {
-    cursor: pointer;
-    opacity: 0;
+.s-controller__button--active {
+    background-color: white;
+    color: var(--primary-color);
+    border: 0.1875rem solid var(--primary-color);
+    outline: 0.125rem solid white;
 }
 
-.s-card--hovered .s-card__image {
-    transform: scale(1.4);
-}
-
-.s-card--hovered .s-card__title {
-    bottom: 50%;
+.s-controller__line {
+    background-color: white;
+    width: 50%;
+    height: 2px;
+    position: absolute;
 }
 
 body#spider-man-01-hovered::before {
@@ -142,4 +172,12 @@ body[id^="spider-man-"]::before {
 
 body[id^="spider-man-"] .s-card:not(.s-card--hovered) {
     filter: grayscale(100%);
+}
+
+.s-cards-carousel {
+    display: flex;
+    justify-content: center;
+    width: calc(100vw / 3 - 10%);
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-in;
 }
